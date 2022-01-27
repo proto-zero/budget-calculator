@@ -8,6 +8,10 @@
 
 - I want to get the API up and running so I can do some tests with it. Using the supplied documentation I added firebase to the project.
 
+- In the initial outline I was able to console.log the results from the api. I knew they were present, but it was difficult to get them to cooperate with React. I think, since Firebase uses objects instead of arrays, I need to find a different approach.
+
+- Utilizing many resources on the web, I found success with https://www.pluralsight.com/guides/consume-data-from-firebase-firestore-in-a-react-app and was able to produce some of the api in the view.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state

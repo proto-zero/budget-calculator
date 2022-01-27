@@ -1,9 +1,9 @@
-import Outline from './components/outline';
+import YardItems from './components/YardItems';
 
 function App() {
   return (
     <div>
-      <Outline />
+      <YardItems />
     </div>
   );
 }
