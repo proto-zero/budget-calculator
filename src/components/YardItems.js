@@ -1,26 +1,26 @@
 import db from './firebase.config';
 import Ex from './Ex';
 import React, { useState, useEffect } from 'react'
-import './YardItems.css';
 
 function YardItems() {
-  const [yardItems, setYardItems] = useState([]);
+  // const [yardItems, setYardItems] = useState([]);
 
-  const fetchItems = async() => {
-    const response = db.collection('items');
-    const data = await response.get();
-    data.docs.forEach(item => {
-      setYardItems([...yardItems, item.data()])
-    })
-  }
+  // const fetchItems = async() => {
+  //   const response = db.collection('items');
+  //   const data = await response.get();
+  //   data.docs.forEach(item => {
+  //     setYardItems([...yardItems, item.data()])
+  //   })
+  // }
 
-  useEffect(() => {
-    fetchItems();
-  }, [])
+  // useEffect(() => {
+  //   fetchItems();
+  // }, [])
 
   return (
-    <div className="main">
-      <h1>Available Items</h1>
+    <div>
+      hello there
+      {/* <h1>Available Items</h1>
       {
         yardItems && yardItems.map(item => {
           return (
@@ -29,7 +29,7 @@ function YardItems() {
             </div>
           )
         })
-      }
+      } */}
     </div>
   );
 }
