@@ -1,6 +1,9 @@
-import react from "react";
-import { initializeApp } from 'firebase/app';
+import react, { useState, useEffect } from "react";
+import db from './firebase.config';
+// import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import Ex from './Ex';
+
 
 // "items" collection interface
 // Each document in the collection looks like this:
@@ -11,18 +14,18 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 // highPrice: number;
 // }
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD7NUVfrImccSo8FuCBG7bXVk0oLFqgE-k",
-    authDomain: "yardzen-demo.firebaseapp.com",
-    databaseURL: "https://yardzen-demo.firebaseio.com",
-    projectId: "yardzen-demo",
-    storageBucket: "yardzen-demo.appspot.com",
-    messagingSenderId: "509183652730",
-    appId: "1:509183652730:web:ba2208f7d8e0882f009cc3"
-};
+// const firebaseConfig = {
+//     apiKey: "AIzaSyD7NUVfrImccSo8FuCBG7bXVk0oLFqgE-k",
+//     authDomain: "yardzen-demo.firebaseapp.com",
+//     databaseURL: "https://yardzen-demo.firebaseio.com",
+//     projectId: "yardzen-demo",
+//     storageBucket: "yardzen-demo.appspot.com",
+//     messagingSenderId: "509183652730",
+//     appId: "1:509183652730:web:ba2208f7d8e0882f009cc3"
+// };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
 async function getNames(db) {
     const nameCol = collection(db, 'items');
@@ -32,12 +35,29 @@ async function getNames(db) {
 }
 
 function Outline() {
+    const [List, setList] = useState([]);
+
+    useEffect(async() => {
+        const list = await getNames(db); //getUngrouped()
+        setList(list);
+      }, [])
+
     return (
-        <div>
-            hello there
-            {console.log(getNames(db))}
+        <div className="main">
+            List of Items
+            {
+                List.map(item => {
+                return (
+                    <div>
+                        <Ex key={item.id} type={item.type} name={item.name} lowprice={item.lowPrice} highprice={item.highPrice} />
+                    </div>
+                )})
+            }
         </div>
+
     );
 }
 
 export default Outline;
+
+// organize list in order of type

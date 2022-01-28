@@ -12,6 +12,10 @@
 
 - Utilizing many resources on the web, I found success with https://www.pluralsight.com/guides/consume-data-from-firebase-firestore-in-a-react-app and was able to produce some of the api in the view.
 
+- I was able to merge the advances in the above comment with the original outline version. Mostly what I needed was the useEffect function. I moved the api config to it's own component and imported it to the outline. 
+
+- I created a component, Ex, to display the api return using props. I'll need to organize the api return by item type.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state

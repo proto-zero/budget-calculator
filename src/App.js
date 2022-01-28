@@ -1,9 +1,11 @@
 import YardItems from './components/YardItems';
+import Outline from './components/outline';
 
 function App() {
   return (
     <div>
-      <YardItems />
+      {/* <YardItems /> */}
+      <Outline />
     </div>
   );
 }
