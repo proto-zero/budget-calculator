@@ -1,4 +1,5 @@
 import db from './firebase.config';
+import Ex from './Ex';
 import React, { useState, useEffect } from 'react'
 
 function YardItems() {
@@ -20,10 +21,7 @@ function YardItems() {
         yardItems && yardItems.map(item => {
           return (
             <div>
-              <h4>{item.type}</h4>
-              <h4>{item.name}</h4>
-              <h4>{item.lowPrice}</h4>
-              <h4>{item.highPrice}</h4>
+                <Ex key={item.id} type={item.type} name={item.name} lowprice={item.lowPrice} highprice={item.highPrice} />
             </div>
           )
         })
