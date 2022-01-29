@@ -3,6 +3,7 @@ import db from './firebase.config';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import Ex from './Ex';
 import './outline.css';
+import { getDefaultNormalizer } from "@testing-library/react";
 
 async function getItems(db) {                                   // Access the items in the firebase api
     const itemCol = collection(db, 'items');
@@ -23,7 +24,7 @@ function Outline(props) {
       }, [])
 
       function getPrice(exState) {                              // Sets state for the total price of items selected
-        const totalPrice = parseInt(exState, 10) + parseInt(remainingBudget, 10);
+        const totalPrice = parseInt(remainingBudget) + parseInt(exState);
         setRemainingBudget(totalPrice);
       }
 
