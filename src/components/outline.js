@@ -14,6 +14,8 @@ async function getItems(db) {                                   // Access the it
 function Outline(props) {
     const [itemList, setItemList] = useState([]);               // Api items in state
     const [remainingBudget, setRemainingBudget] = useState(0);  // Remaining budget in state
+    
+    const totalBudgetRemaining = parseInt(props.userBudgetValue, 10) - parseInt(remainingBudget, 10)
 
     useEffect(async() => {                                      // Sets state for the itemList
         const list = await getItems(db);
@@ -21,13 +23,14 @@ function Outline(props) {
       }, [])
 
       function getPrice(exState) {                              // Sets state for the total price of items selected
-        setRemainingBudget(parseInt(exState, 10) + parseInt(remainingBudget, 10))
+        const totalPrice = parseInt(exState, 10) + parseInt(remainingBudget, 10);
+        setRemainingBudget(totalPrice);
       }
 
     return (
         <div className="outline">
             {/* Total budget remaining: total price (passed up from Ex component) subtracted from the user budget (passed down through props from App) */}
-            <h1>Total Budget Remaining: {parseInt(props.userBudgetValue, 10) - parseInt(remainingBudget, 10)}</h1>
+            <h1>Total Budget Remaining: {totalBudgetRemaining}</h1>
             <h2>List of Items</h2>
             <div className="item-container">
                 {
