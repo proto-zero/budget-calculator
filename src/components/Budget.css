@@ -6,3 +6,9 @@
     width: 100%;
     padding: 5vw 0 2vw;
 }
+
+input {
+    width: 250px;
+    line-height: 30.4px;
+    text-align: center;
+}

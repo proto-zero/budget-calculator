@@ -1,3 +1,18 @@
 .ex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    padding-bottom:10px;
+}
 
+select {
+    background: rgb(190, 203, 190);
+    border-radius: 32px;
+    font-size: 1em;
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+    cursor: pointer;
 }
