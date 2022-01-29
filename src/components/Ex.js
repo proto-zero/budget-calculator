@@ -10,6 +10,11 @@ function Ex(props) {
         props.onGetPrice(price);                    // Passes state up to outline
     }
 
+    var formatter = new Intl.NumberFormat(undefined, {
+        style: 'currency',
+        currency: 'USD',
+    });
+
     return (
         <div className="ex">
             <h3>{props.type}</h3>
@@ -17,8 +22,8 @@ function Ex(props) {
 
             <select onChange={priceHandler}>
                 <option value="0">Price</option>
-                <option value={props.lowprice}>{props.lowprice}</option>
-                <option value={props.highprice}>{props.highprice}</option>
+                <option value={props.lowprice}>{formatter.format(props.lowprice / 100)}</option>
+                <option value={props.highprice}>{formatter.format(props.highprice / 100)}</option>
             </select>
         </div>
     );

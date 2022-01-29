@@ -22,6 +22,8 @@
 
 - By adding the new state from the item card to the remaining budget state I was able to find the sum of the selected items. Then, after pushing the user budget state up from the Budget component to the App and then back down to the outline component, I can subtract the total price from the budget to find the remaining budget.
 
+- The Intl.NumberFormat function displays ints in a currency format. I had to divide the prices of items by 100 to change the value from cents to dollars. So far I only applied it to the item cards in the Ex component.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -32,12 +34,12 @@
 - change remaining balance color to reflect when approaching last 10% of budget or overbudget
 
 ## TODO
-- sort the item cards by type
-- adjust price from pennies to dollars and decimals. Divide by 100?
-- + Create layout for item cards
-- + Push state from item cards to outline
-- + Add the total price from each selected item card
-- + display the remaining balance
-- Fix lag in updating state
-- Change remaining budget colors 
-- Must be able to lower the remaining budget by deselecting items
+- [ ] sort the item cards by type
+- [x] adjust price from pennies to dollars and decimals. Divide by 100?
+- [x] Create layout for item cards
+- [x] Push state from item cards to outline
+- [x] Add the total price from each selected item card
+- [x] display the remaining balance
+- [ ] Fix lag in updating state
+- [ ] Change remaining budget colors 
+- [ ] Must be able to lower the remaining budget by deselecting items
