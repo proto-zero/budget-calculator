@@ -5,7 +5,7 @@ function Ex(props) {
     const [price, setPrice] = useState(0);
 
     function priceHandler(e) {
-        let itemPrice = (e.target.value);
+        const itemPrice = (e.currentTarget.value);
         setPrice(itemPrice);
         props.onGetPrice(price);
     }
@@ -16,9 +16,9 @@ function Ex(props) {
             <h4>{props.name}</h4>
 
             <select onChange={priceHandler}>
-                <option>Price</option>
+                <option value="0">Price</option>
                 <option value={props.lowprice}>{props.lowprice}</option>
-                <option on value={props.highprice}>{props.highprice}</option>
+                <option value={props.highprice}>{props.highprice}</option>
             </select>
         </div>
     );

@@ -20,6 +20,8 @@
 
 - I was able to pass the state up from the cards to the outline, currently labeled Total Price. Soon, I want to create a total of all of the amounts and subtract that from the user budget in order to display the Remaining Budget.
 
+- By adding the new state from the item card to the remaining budget state I was able to find the sum of the selected items. Then, after pushing the user budget state up from the Budget component to the App and then back down to the outline component, I can subtract the total price from the budget to find the remaining budget.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -30,8 +32,11 @@
 - change remaining balance color to reflect when approaching last 10% of budget or overbudget
 
 ## TODO
+- sort the item cards by type
 - adjust price from pennies to dollars and decimals
 - + Create layout for item cards
 - + Push state from item cards to outline
-- Add the total price from each selected item card
-- display the remaining balance
+- + Add the total price from each selected item card
+- + display the remaining balance
+- Fix lag in updating state
+- Change remaining budget colors 

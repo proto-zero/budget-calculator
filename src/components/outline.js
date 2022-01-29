@@ -11,7 +11,7 @@ async function getNames(db) {
     return nameList;
 }
 
-function Outline() {
+function Outline(props) {
     const [List, setList] = useState([]);
     const [remainingBudget, setRemainingBudget] = useState(0);
 
@@ -21,12 +21,12 @@ function Outline() {
       }, [])
 
       function getPrice(exState) {
-        setRemainingBudget(exState + remainingBudget)
+        setRemainingBudget(parseInt(exState, 10) + parseInt(remainingBudget, 10))
       }
 
     return (
         <div className="outline">
-            <h1>Total Price: {parseInt(remainingBudget, 10)}</h1>
+            <h1>Total Budget Remaining: {parseInt(props.userBudgetValue, 10) - parseInt(remainingBudget, 10)}</h1>
             <h2>List of Items</h2>
             <div className="item-container">
                 {

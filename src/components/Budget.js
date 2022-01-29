@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import './Budget.css';
 
-function Budget() {
+function Budget(props) {
     const [budget, setBudget] = useState(0);
 
     function budgetHandler(event) {
         const userBudget = event.target.value;
         setBudget(userBudget);
+        props.onGetBudget(budget);
     }
     return (
         <div className="budget">
