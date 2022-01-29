@@ -4,36 +4,38 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 import Ex from './Ex';
 import './outline.css';
 
-async function getNames(db) {
-    const nameCol = collection(db, 'items');
-    const nameSnapshot = await getDocs(nameCol);
-    const nameList = nameSnapshot.docs.map(doc => doc.data());
-    return nameList;
+async function getItems(db) {                                   // Access the items in the firebase api
+    const itemCol = collection(db, 'items');
+    const itemSnapshot = await getDocs(itemCol);
+    const listOfItems = itemSnapshot.docs.map(doc => doc.data());
+    return listOfItems;
 }
 
 function Outline(props) {
-    const [List, setList] = useState([]);
-    const [remainingBudget, setRemainingBudget] = useState(0);
+    const [itemList, setItemList] = useState([]);               // Api items in state
+    const [remainingBudget, setRemainingBudget] = useState(0);  // Remaining budget in state
 
-    useEffect(async() => {
-        const list = await getNames(db); //getUngrouped()
-        setList(list);
+    useEffect(async() => {                                      // Sets state for the itemList
+        const list = await getItems(db);
+        setItemList(list);
       }, [])
 
-      function getPrice(exState) {
+      function getPrice(exState) {                              // Sets state for the total price of items selected
         setRemainingBudget(parseInt(exState, 10) + parseInt(remainingBudget, 10))
       }
 
     return (
         <div className="outline">
+            {/* Total budget remaining: total price (passed up from Ex component) subtracted from the user budget (passed down through props from App) */}
             <h1>Total Budget Remaining: {parseInt(props.userBudgetValue, 10) - parseInt(remainingBudget, 10)}</h1>
             <h2>List of Items</h2>
             <div className="item-container">
                 {
-                    List.map(item => {
+                    itemList.map(item => {                      // .map iterates over the itemList array
                     return (
                         <div className="item-list">
-                            <Ex key={item.id} onGetPrice={getPrice} type={item.type} name={item.name} lowprice={item.lowPrice} highprice={item.highPrice} />
+                            {/* Pass the item attributes down to Ex component */}
+                            <Ex key={item.type} onGetPrice={getPrice} type={item.type} name={item.name} lowprice={item.lowPrice} highprice={item.highPrice} />
                         </div>
                     )})
                 }
@@ -44,5 +46,3 @@ function Outline(props) {
 }
 
 export default Outline;
-
-// organize list in order of type

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import './Ex.css'
 
 function Ex(props) {
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState(0);          // State for individual item price
 
-    function priceHandler(e) {
-        const itemPrice = (e.currentTarget.value);
-        setPrice(itemPrice);
-        props.onGetPrice(price);
+    function priceHandler(e) {                      
+        const itemPrice = (e.currentTarget.value);  // Grabs the selected price
+        setPrice(itemPrice);                        // Sets the state with that price
+        props.onGetPrice(price);                    // Passes state up to outline
     }
 
     return (

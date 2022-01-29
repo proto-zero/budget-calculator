@@ -33,10 +33,11 @@
 
 ## TODO
 - sort the item cards by type
-- adjust price from pennies to dollars and decimals
+- adjust price from pennies to dollars and decimals. Divide by 100?
 - + Create layout for item cards
 - + Push state from item cards to outline
 - + Add the total price from each selected item card
 - + display the remaining balance
 - Fix lag in updating state
 - Change remaining budget colors 
+- Must be able to lower the remaining budget by deselecting items
