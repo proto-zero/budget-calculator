@@ -16,6 +16,10 @@
 
 - I created a component, Ex, to display the api return using props. I'll need to organize the api return by item type.
 
+- I gave the project an overall style similar to the Yardzen homepage, applying the layers of background color along with square cards with box-shadow. The item cards originally had buttons for the user to press to select a high or low price, but I swapped those out for a single selector.
+
+- I was able to pass the state up from the cards to the outline, currently labeled Total Price. Soon, I want to create a total of all of the amounts and subtract that from the user budget in order to display the Remaining Budget.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -24,3 +28,10 @@
 - When users select a yard item, list chosen items like a receipt
 - subtract item cost from the budget and update the remaining balance
 - change remaining balance color to reflect when approaching last 10% of budget or overbudget
+
+## TODO
+- adjust price from pennies to dollars and decimals
+- + Create layout for item cards
+- + Push state from item cards to outline
+- Add the total price from each selected item card
+- display the remaining balance
