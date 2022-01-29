@@ -3,7 +3,9 @@
 
 ## Project Component Stages
 App contains Budget and Outline components
+
 Outline contains Ex component
+
 App, Budget, Outline, and Ex css files
 
 ## Notes
