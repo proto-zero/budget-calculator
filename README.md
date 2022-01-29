@@ -1,6 +1,11 @@
 # Budget Calculator
 # - Sean Lenhart
 
+## Project Component Stages
+App contains Budget and Outline components
+Outline contains Ex component
+App, Budget, Outline, and Ex css files
+
 ## Notes
 - I started by creating a new React app and writing a blank README before committing to git.
 
