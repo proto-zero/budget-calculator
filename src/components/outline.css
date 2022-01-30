@@ -25,11 +25,15 @@
     margin: 5px;
 }
 
-.over-budget {
-    color: red;
+.total-budget {
+    border-radius: 32px;
+    padding: 16px 32px;
+}
+
+.over {
     background: #edafaf;
 }
 
-.under-budget {
-    color: green;
+.under {
+    background: #becbbe;
 }

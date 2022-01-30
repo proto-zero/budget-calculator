@@ -31,7 +31,7 @@ App, Budget, Outline, and Ex css files
 
 - The Intl.NumberFormat function displays ints in a currency format. I had to divide the prices of items by 100 to change the value from cents to dollars. So far I only applied it to the item cards in the Ex component.
 
-- I added a const with a ternary operator that checks whether the total remaining budget is greater than 0 and changes the font color to alert the user if they're over budget. I applied this new variable to the class of the appropriate div.
+- I added a const with a ternary operator that checks whether the total remaining budget is greater than 0 and changes the background color to alert the user if they're over budget. I applied this new variable to the class of the appropriate div, styled after one of the green buttons on the Yardzen homepage.
 
 - I adjusted the font to futura-PT and Domaine Display as used in the Yardzen home page.
 
