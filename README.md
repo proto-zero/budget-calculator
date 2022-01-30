@@ -31,6 +31,8 @@ App, Budget, Outline, and Ex css files
 
 - The Intl.NumberFormat function displays ints in a currency format. I had to divide the prices of items by 100 to change the value from cents to dollars. So far I only applied it to the item cards in the Ex component.
 
+- I added a const with a ternary operator that checks whether the total remaining budget is greater than 0 and changes the font color to alert the user if they're over budget. I applied this new variable to the class of the appropriate div.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -48,6 +50,6 @@ App, Budget, Outline, and Ex css files
 - [x] Add the total price from each selected item card
 - [x] display the remaining balance
 - [ ] Fix lag in updating state
-- [ ] Change remaining budget colors 
+- [x] Change remaining budget colors 
 - [ ] Must be able to lower the remaining budget by deselecting items
 - [ ] Change font to futura
