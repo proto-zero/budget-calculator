@@ -33,7 +33,7 @@ function Outline(props) {
     var formatter = props.formatter;                            // Formats numbers as currency
 
     // Adjusts the color of Total Budget Remaining depending on whether it is over or under budget
-    const budgetColor = totalBudgetRemaining > 0 ? 'under total-budget' : 'over total-budget';
+    const budgetColor = totalBudgetRemaining >= 0 ? 'under total-budget' : 'over total-budget';
 
     // JSX
     return (
