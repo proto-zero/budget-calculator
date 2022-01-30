@@ -7,6 +7,10 @@
     padding-bottom:10px;
 }
 
+.ex h3, h4 {
+    font-family: 'Domaine Display';
+}
+
 select {
     background: rgb(190, 203, 190);
     border-radius: 32px;

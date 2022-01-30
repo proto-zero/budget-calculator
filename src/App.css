@@ -3,6 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   background: blue;
+  font-family: 'futura-PT', sans-serif;
 }
 
 .app {

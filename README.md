@@ -33,6 +33,8 @@ App, Budget, Outline, and Ex css files
 
 - I added a const with a ternary operator that checks whether the total remaining budget is greater than 0 and changes the font color to alert the user if they're over budget. I applied this new variable to the class of the appropriate div.
 
+- I adjusted the font to futura-PT and Domaine Display as used in the Yardzen home page.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -52,4 +54,4 @@ App, Budget, Outline, and Ex css files
 - [ ] Fix lag in updating state
 - [x] Change remaining budget colors 
 - [ ] Must be able to lower the remaining budget by deselecting items
-- [ ] Change font to futura
+- [x] Change font to futura
