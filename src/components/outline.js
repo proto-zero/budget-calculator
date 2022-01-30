@@ -12,20 +12,22 @@ async function getItems(db) {                                   // Access the it
 }
 
 function Outline(props) {
+    // State
     const [itemList, setItemList] = useState([]);               // Api items in state
     const [itemTotal, setItemTotal] = useState(0);              // Remaining budget in state
-    const [isOver, setIsOver] = useState(false);
 
+    // Functions
     useEffect(async() => {                                      // Sets state for the itemList
         const list = await getItems(db);
         setItemList(list);
         }, [])
 
     function getPrice(exState) {                                // Sets state for the total price of items selected
-    const totalPrice = parseInt(itemTotal) + parseInt(exState);
-    setItemTotal(totalPrice);
+        const totalPrice = parseInt(itemTotal) + parseInt(exState);
+        setItemTotal(totalPrice);
     }
 
+    // Variables
     const totalBudgetRemaining = parseInt(props.userBudgetValue) - parseInt(itemTotal);
 
     var formatter = props.formatter;                            // Formats numbers as currency
@@ -33,6 +35,7 @@ function Outline(props) {
     // Adjusts the color of Total Budget Remaining depending on whether it is over or under budget
     const budgetColor = totalBudgetRemaining > 0 ? 'under-budget' : 'over-budget';
 
+    // JSX
     return (
         <div className="outline">
             {/* Total budget remaining: total price (passed up from Ex component) subtracted from the user budget (passed down through props from App) */}

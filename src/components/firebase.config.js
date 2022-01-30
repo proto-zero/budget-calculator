@@ -2,7 +2,6 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore/lite';
 
 // A component to store the firebase configuration information.
-
 const firebaseConfig = {
     apiKey: "AIzaSyD7NUVfrImccSo8FuCBG7bXVk0oLFqgE-k",
     authDomain: "yardzen-demo.firebaseapp.com",
