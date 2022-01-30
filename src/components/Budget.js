@@ -11,10 +11,10 @@ function Budget(props) {
     }
     return (
         <div className="budget">
-            <h3>What is your budget in pennies?</h3>
+            <h3>What is your budget?</h3>
             {/* Input is styled after the email submission on the Yardzen homepage */}
-            <input type="text" onChange={budgetHandler} placeholder="Budget" />
-            <h3 className="budget-highlight">Target Budget: {budget} pennies</h3>
+            <input type="number" onChange={budgetHandler} placeholder="Budget" />
+            <h3 className="budget-highlight">Target Budget: {props.formatter.format(budget)}</h3>
         </div>
     );
 }

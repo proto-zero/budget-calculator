@@ -8,6 +8,10 @@
     padding: 2vw 0;
 }
 
+.outline h1 {
+    text-align: center;
+}
+
 .item-container {
     width: 100%;
     display: flex;

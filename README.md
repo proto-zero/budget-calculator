@@ -23,7 +23,7 @@ App, Budget, Outline, and Ex css files
 
 - I created a component, Ex, to display the api return using props. I'll need to organize the api return by item type.
 
-- I gave the project an overall style similar to the Yardzen homepage, applying the layers of background color along with square cards with box-shadow. The item cards originally had buttons for the user to press to select a high or low price, but I swapped those out for a single selector.
+- I gave the project an overall style similar to the Yardzen homepage, applying the layers of background color along with square cards with box-shadow. I gave the card container flexbox and flexwrap to allow the appropriate number of item cards to fill the screen depending on screen size. The item cards originally had buttons for the user to press to select a high or low price, but I swapped those out for a single selector.
 
 - I was able to pass the state up from the cards to the outline, currently labeled Total Price. Soon, I want to create a total of all of the amounts and subtract that from the user budget in order to display the Remaining Budget.
 
@@ -50,3 +50,4 @@ App, Budget, Outline, and Ex css files
 - [ ] Fix lag in updating state
 - [ ] Change remaining budget colors 
 - [ ] Must be able to lower the remaining budget by deselecting items
+- [ ] Change font to futura

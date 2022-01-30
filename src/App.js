@@ -10,10 +10,15 @@ function App() {
     setUserBudget(budgetState);
   }
 
+  var formatter = new Intl.NumberFormat(undefined, {
+    style: 'currency',
+    currency: 'USD',
+});
+
   return (
     <div className="app">
-      <Budget onGetBudget={getBudget} />            {/* Grabs the user budget */}
-      <Outline userBudgetValue={userBudget} />      {/* Passes the user budget down */}
+      <Budget onGetBudget={getBudget} formatter={formatter} />            {/* Grabs the user budget */}
+      <Outline userBudgetValue={userBudget} formatter={formatter} />      {/* Passes the user budget down */}
     </div>
   );
 }
