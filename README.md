@@ -46,12 +46,12 @@ App, Budget, Outline, and Ex css files
 
 ## TODO
 - [ ] sort the item cards by type
+- [ ] Must be able to lower the remaining budget by deselecting items
+- [ ] Fix lag in updating state
 - [x] adjust price from pennies to dollars and decimals. Divide by 100?
 - [x] Create layout for item cards
 - [x] Push state from item cards to outline
 - [x] Add the total price from each selected item card
 - [x] display the remaining balance
-- [ ] Fix lag in updating state
 - [x] Change remaining budget colors 
-- [ ] Must be able to lower the remaining budget by deselecting items
 - [x] Change font to futura
