@@ -33,7 +33,7 @@ App, Budget, Outline, and Ex css files
 
 - I added a const with a ternary operator that checks whether the total remaining budget is greater than 0 and changes the background color to alert the user if they're over budget. I applied this new variable to the class of the appropriate div, styled after one of the green buttons on the Yardzen homepage.
 
-- I adjusted the font to futura-PT and Domaine Display as used in the Yardzen home page.
+- I adjusted the font to futura-PT for text and Domaine Display for headers as used in the Yardzen home page.
 
 ## Outline
 - Ask the User for their budget
