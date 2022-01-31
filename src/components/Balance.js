@@ -81,36 +81,42 @@ function Outline(props) {
             <h2>List of Items</h2>
             <div className="item-container">
                 <TypeContainer
+                    className="white"
                     onGetPrice={getPriceWater}
                     typeArray={typeArray[0]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
+                    className="gold"
                     onGetPrice={getPriceStructure}
                     typeArray={typeArray[1]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
+                className="white"
                     onGetPrice={getPriceLighting}
                     typeArray={typeArray[2]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
+                    className="tan"
                     onGetPrice={getPriceGround}
                     typeArray={typeArray[3]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
+                    className="white"
                     onGetPrice={getPriceDeck}
                     typeArray={typeArray[4]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
+                    className="gold"
                     onGetPrice={getPriceFence}
                     typeArray={typeArray[5]}
                     itemList={itemList} 

@@ -22,7 +22,7 @@ function TypeContainer(props) {
     
     // JSX
     return (
-        <div>
+        <div className={props.className}>
             <div className="type-container">
                 <h3>{props.typeArray}</h3>
                 <div className="card-container">

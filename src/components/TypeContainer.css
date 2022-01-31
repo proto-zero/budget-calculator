@@ -24,3 +24,15 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.tan {
+    background: #f2f5f2;
+}
+
+.gold {
+    background: #fbf3eb;
+}
+
+.white {
+    background: #fff;
+}
