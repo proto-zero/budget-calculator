@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: blue;
+  background: #fff;
   font-family: 'futura-PT', sans-serif;
 }
 

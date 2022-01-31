@@ -4,13 +4,13 @@
 ## Project Component Stages
 App contains Budget and Balance components
 
-Balance contains TypeContainer component
+- Balance contains TypeContainer component
 
-TypeContainer contains ItemCard component
+    - TypeContainer contains ItemCard component
 
 App, Budget, Balance, TypeContainer, and ItemCard css files
 
-## Notes
+## Production Log
 - I started by creating a new React app and writing a blank README before committing to git.
 
 - I stripped App.js and added a components folder with a new component, Balance, which I will use to sketch the overall project in order to help decide what components I will need. I placed Balance in App.
@@ -43,15 +43,13 @@ App, Budget, Balance, TypeContainer, and ItemCard css files
 
 - My initial attempts to calculate the total remaining budget could add to the total price but not subtract if different items were picked. At first I tried to solve this by sending the value of the last chosen item, stored in ItemCard state, but set to negative up the state to the Balance parent, however react seemed to correct this and change the values back to positive. I decided then to create the TypeContainer component, place it in Balance and place ItemCard in TypeContainer. The theory is that all of the available items will be listed under ItemCard, ItemCard will send it's value up to TypeContainer which sorts the items by type. If each TypeContainer has the individual value from ItemCard, and there are six types of items so six TypeContainer components will be rendered, then TypeContainer can send it's values up to Balance which can add together those six values for the total price. The total price can be subtracted from the user budget and give the Total Budget Remaining.
 
-- While cleaning up the code I deleted the YardItems component as it was no longer necessary.
-
 - In keeping with the Yardzen homepage similarities I added the Yardzen logo to the top corner
 
 - I was able to organize the items by type when I created an array of just the item types, then iterated over that array in Balance to produce a TypeContainer component full of ItemCard components. This allowed me to lift the state of each individual item's price from ItemCard to TypeContainer to Balance, however by the time it reached Balance I only had one state for six different item types. I resolved to take the more manual approach and create six TypeContainer components, each with a different type, and feed each a function to update a corresponding state. I then totaled those states and subtracted them from the user budget to successfully allow the user to adjust their budget.
 
 - After much research, UseEffect makes more sense and I can use it to lift state immediately when the state of a component updates, thus removing any state lag.
 
-- The ItemCard select options can't communicate with each other and so don't know when one is selected, causing confusion as to what items have been selected of each type. I added an ID to my itemList from the api and passed it down to each iterated ItemCard as the key. I made a new state in TypeContainer for itemID and set it to a number outside of the range of ids created for itemList. I passed up the item id selected from ItemCard to compare with the TypeContainer itemID in order to determine whether a selector option is the currently selected option, closing any other open selectors and making item selection much more clear and ideal.
+- The ItemCard select options can't communicate with each other and so don't know when one is selected, causing confusion as to what items have been selected of each type. From the api itemList I added an ID value and passed it down to each iterated ItemCard as the key. I made a new state in TypeContainer for itemID and set it to a number outside of the range of ids created for itemList. I passed up the item id selected from ItemCard to compare with the TypeContainer itemID in order to determine whether a selector option is the currently selected option, closing any other open selectors and making item selection much more clear and ideal.
 
 - As a last touch to help match the Yardzen layout I added a hover effect to the item Type headings as well as the user budget input
 
