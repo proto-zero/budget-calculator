@@ -15,12 +15,12 @@ function Outline(props) {
     // State
     const [itemList, setItemList] = useState([]);               // Api items in state
 
-    const [itemOne, setItemOne] = useState(0);                  // States for the individual TypeContainers
-    const [itemTwo, setItemTwo] = useState(0);
-    const [itemThree, setItemThree] = useState(0);
-    const [itemFour, setItemFour] = useState(0);
-    const [itemFive, setItemFive] = useState(0);
-    const [itemSix, setItemSix] = useState(0);
+    const [itemWater, setItemWater] = useState(0);                  // States for the individual TypeContainers
+    const [itemStructure, setItemStructure] = useState(0);
+    const [itemLighting, setItemLighting] = useState(0);
+    const [itemGround, setItemGround] = useState(0);
+    const [itemDeck, setItemDeck] = useState(0);
+    const [itemFence, setItemFence] = useState(0);
 
     // Functions
     useEffect(async() => {                                      // Sets state for the itemList
@@ -32,32 +32,32 @@ function Outline(props) {
         }, [])
 
     function getPriceWater(price) {                               // Sets state for each TypeComponent price 
-        setItemOne(price);
+        setItemWater(price);
     };
 
     function getPriceStructure(price) {
-        setItemTwo(price);
+        setItemStructure(price);
     };
 
     function getPriceLighting(price) {
-        setItemThree(price);
+        setItemLighting(price);
     };
 
     function getPriceGround(price) {
-        setItemFour(price);
+        setItemGround(price);
     };
 
     function getPriceDeck(price) {
-        setItemFive(price);
+        setItemDeck(price);
     };
 
     function getPriceFence(price) {
-        setItemSix(price);
+        setItemFence(price);
     };
 
     // Variables
         // Total price of each TypeComponent price
-    let totalPrice = parseInt(itemOne) + parseInt(itemTwo) + parseInt(itemThree) + parseInt(itemFour) + parseInt(itemFive) + parseInt(itemSix);
+    let totalPrice = parseInt(itemWater) + parseInt(itemStructure) + parseInt(itemLighting) + parseInt(itemGround) + parseInt(itemDeck) + parseInt(itemFence);
 
         // Remaining Budget subtracting totalPrice from user budget
     const totalBudgetRemaining = parseInt(props.userBudgetValue) - parseInt(totalPrice);
