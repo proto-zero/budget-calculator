@@ -35,6 +35,8 @@ App, Budget, Outline, and Ex css files
 
 - I adjusted the font to futura-PT for text and Domaine Display for headers as used in the Yardzen home page.
 
+- I created a new array of just the item.type. In the JSX I mapped the array to produce a section with each individual item.type accompanied by any of the items that have that type. So far it still needs to be styled to satisfaction.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -45,7 +47,7 @@ App, Budget, Outline, and Ex css files
 - change remaining balance color to reflect when approaching last 10% of budget or overbudget
 
 ## TODO
-- [ ] sort the item cards by type
+- [x] sort the item cards by type
 - [ ] Must be able to lower the remaining budget by deselecting items
 - [ ] Fix lag in updating state
 - [x] adjust price from pennies to dollars and decimals. Divide by 100?
@@ -55,3 +57,4 @@ App, Budget, Outline, and Ex css files
 - [x] display the remaining balance
 - [x] Change remaining budget colors 
 - [x] Change font to futura
+- [ ] Finalize styling

@@ -35,31 +35,37 @@ function Outline(props) {
     // Adjusts the color of Total Budget Remaining depending on whether it is over or under budget
     const budgetColor = totalBudgetRemaining >= 0 ? 'under total-budget' : 'over total-budget';
 
+    let typeArray = [];
+    itemList.forEach(item => !typeArray.includes(item.type) ? typeArray.push(item.type) : null );
+    console.log(typeArray);
+    
     // JSX
     return (
         <div className="outline">
-            {/* Total budget remaining: total price (passed up from Ex component) subtracted from the user budget (passed down through props from App) */}
             <h1 
             className={budgetColor}>
                 Total Budget Remaining: {formatter.format(totalBudgetRemaining)}
             </h1>
             <h2>List of Items</h2>
             <div className="item-container">
-                {
-                    itemList.map(item => {                      // .map iterates over the itemList array
-                    return (
-                        <div className="item-list">
+                {typeArray.map(typeOfItem => {return (
+                <div>
+                    {typeOfItem}
+                    <div>
+                    {itemList.map(item => { if (item.type === typeOfItem) {return <div className="item-list">
                             {/* Pass the item attributes down to Ex component */}
                             <Ex key={item.type} 
                             onGetPrice={getPrice} 
-                            type={item.type} 
                             name={item.name} 
                             lowprice={item.lowPrice} 
                             highprice={item.highPrice} 
                             formatter={formatter} />
-                        </div>
-                    )})
-                }
+                        </div>}})}
+                    </div>
+                </div>)})}
+                {/* {itemList.map(item => { if (item.type === "LIGHTING") {return <div>{item.name}</div>}})} */}
+
+                
             </div>
         </div>
 
