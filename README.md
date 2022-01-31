@@ -53,14 +53,16 @@ App, Budget, Balance, TypeContainer, and ItemCard css files
 
 - The ItemCard select options can't communicate with each other and so don't know when one is selected, causing confusion as to what items have been selected of each type. I added an ID to my itemList from the api and passed it down to each iterated ItemCard as the key. I made a new state in TypeContainer for itemID and set it to a number outside of the range of ids created for itemList. I passed up the item id selected from ItemCard to compare with the TypeContainer itemID in order to determine whether a selector option is the currently selected option, closing any other open selectors and making item selection much more clear and ideal.
 
+- As a last touch to help match the Yardzen layout I added a hover effect to the item Type headings as well as the user budget input
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
 - Have a remaining balance in the state, budget - item cost
 - Have a dropdown for yard items
-- When users select a yard item, list chosen items like a receipt
+- When users select a yard item, list chosen items
 - subtract item cost from the budget and update the remaining balance
-- change remaining balance color to reflect when approaching last 10% of budget or overbudget
+- change remaining balance color to reflect when under or overbudget
 
 ## TODO
 - [x] sort the item cards by type
