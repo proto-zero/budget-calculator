@@ -14,7 +14,13 @@ async function getItems(db) {                                   // Access the it
 function Outline(props) {
     // State
     const [itemList, setItemList] = useState([]);               // Api items in state
-    const [itemTotal, setItemTotal] = useState(0);              // Remaining budget in state
+    const [itemOne, setItemOne] = useState(0);
+    const [itemTwo, setItemTwo] = useState(0);
+    const [itemThree, setItemThree] = useState(0);
+    const [itemFour, setItemFour] = useState(0);
+    const [itemFive, setItemFive] = useState(0);
+    const [itemSix, setItemSix] = useState(0);
+    // const [itemTotal, setItemTotal] = useState(0);              // Remaining budget in state
 
     // Functions
     useEffect(async() => {                                      // Sets state for the itemList
@@ -22,10 +28,36 @@ function Outline(props) {
         setItemList(list);
         }, [])
 
-    function getPrice(typeContainerState) {                     // Sets state for the total price of items selected
-        const totalPrice = parseInt(itemTotal) + parseInt(typeContainerState);
-        setItemTotal(totalPrice);
-    }
+    // function getPrice(typeContainerState) {                     // Sets state for the total price of items selected
+    //     const totalPrice = parseInt() + parseInt(typeContainerState);
+    //     setItemTotal(totalPrice);
+    // }
+
+    function getPriceOne(price) {
+        setItemOne(price);
+    };
+
+    function getPriceTwo(price) {
+        setItemTwo(price);
+    };
+
+    function getPriceThree(price) {
+        setItemThree(price);
+    };
+
+    function getPriceFour(price) {
+        setItemFour(price);
+    };
+
+    function getPriceFive(price) {
+        setItemFive(price);
+    };
+
+    function getPriceSix(price) {
+        setItemSix(price);
+    };
+
+    let itemTotal = parseInt(itemOne) + parseInt(itemTwo) + parseInt(itemThree) + parseInt(itemFour) + parseInt(itemFive) + parseInt(itemSix);
 
     // Variables
     const totalBudgetRemaining = parseInt(props.userBudgetValue) - parseInt(itemTotal);
@@ -41,12 +73,50 @@ function Outline(props) {
     // JSX
     return (
         <div className="outline">
+            {typeArray[5]}
             <h1 className={budgetColor}>
                 Total Budget Remaining: {formatter.format(totalBudgetRemaining)}
             </h1>
             <h2>List of Items</h2>
             <div className="item-container">
-                {typeArray.map(typeOfItem => {
+                <TypeContainer
+                    onGetPrice={getPriceOne}
+                    typeArray={typeArray[0]}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
+                <TypeContainer
+                    onGetPrice={getPriceTwo}
+                    typeArray={typeArray[1]}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
+                <TypeContainer
+                    onGetPrice={getPriceThree}
+                    typeArray={typeArray[2]}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
+                <TypeContainer
+                    onGetPrice={getPriceFour}
+                    typeArray={typeArray[3]}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
+                <TypeContainer
+                    onGetPrice={getPriceFive}
+                    typeArray={typeArray[4]}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
+                <TypeContainer
+                    onGetPrice={getPriceSix}
+                    typeArray={typeArray[5]}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
+                    
+                {/* {typeArray.map(typeOfItem => {
                     return (
                         <TypeContainer
                             key={typeOfItem}
@@ -56,7 +126,8 @@ function Outline(props) {
                             formatter={formatter} 
                         />
                     )
-                })}
+                })} */}
+                
             </div>
         </div>
     );

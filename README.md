@@ -43,6 +43,8 @@ App, Budget, Outline, TypeContainer, and Ex css files
 
 - My initial attempts to calculate the total remaining budget could add to the total price but not subtract if different items were picked. At first I tried to solve this by sending the value of the last chosen item, stored in Ex state, but set to negative up the state to the outline parent, however react seemed to correct this and change the values back to positive. I decided then to create the TypeContainer component, place it in outline and place Ex in TypeContainer. The theory is that all of the available items will be listed under Ex, Ex will send it's value up to TypeContainer which sorts the items by type. If each TypeContainer has the individual value from Ex, and there are six types of items so six TypeContainer components will be rendered, then TypeContainer can send it's values up to Outline which can add together those six values for the total price. The total price can be subtracted from the user budget and give the Total Budget Remaining.
 
+- I was able to organize the items by type when I created an array of just the item types, then iterated over that array in outline to produce a TypeContainer component full of Ex components. This allowed me to lift the state of each individual item's price from Ex to TypeContainer to outline, however by the time it reached outline I only had one state for six different item types. I resolved to take the more manual approach and create six TypeContainer components, each with a different type, and feed each a function to update a corresponding state. I then totaled those states and subtracted them from the user budget to successfully allow the user to adjust their budget.
+
 - While cleaning up the code I deleted the YardItems component as it was no longer necessary.
 
 - In keeping with the Yardzen homepage similarities I added the Yardzen logo to the top corner
@@ -58,7 +60,7 @@ App, Budget, Outline, TypeContainer, and Ex css files
 
 ## TODO
 - [x] sort the item cards by type
-- [ ] Must be able to lower the remaining budget by deselecting items
+- [x] Must be able to lower the remaining budget by deselecting items
 - [ ] Fix lag in updating state
 - [x] adjust price from pennies to dollars and decimals. Divide by 100?
 - [x] Create layout for item cards
