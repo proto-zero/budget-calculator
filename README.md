@@ -4,9 +4,11 @@
 ## Project Component Stages
 App contains Budget and Outline components
 
-Outline contains Ex component
+Outline contains TypeContainer component
 
-App, Budget, Outline, and Ex css files
+TypeContainer contains Ex component
+
+App, Budget, Outline, TypeContainer, and Ex css files
 
 ## Notes
 - I started by creating a new React app and writing a blank README before committing to git.
@@ -36,6 +38,12 @@ App, Budget, Outline, and Ex css files
 - I adjusted the font to futura-PT for text and Domaine Display for headers as used in the Yardzen home page.
 
 - I created a new array of just the item.type. In the JSX I mapped the array to produce a section with each individual item.type accompanied by any of the items that have that type. So far it still needs to be styled to satisfaction.
+
+- useState functions as a queue and not an immediate action, and since I am lifting state quite a few times I am running into some lag with state being a step behind the user. This is most vexing. I have attempted to utilize useEffect to call the state immediately and refresh the render but so far to no avail.
+
+- My initial attempts to calculate the total remaining budget could add to the total price but not subtract if different items were picked. At first I tried to solve this by sending the value of the last chosen item, stored in Ex state, but set to negative up the state to the outline parent, however react seemed to correct this and change the values back to positive. I decided then to create the TypeContainer component, place it in outline and place Ex in TypeContainer. The theory is that all of the available items will be listed under Ex, Ex will send it's value up to TypeContainer which sorts the items by type. If each TypeContainer has the individual value from Ex, and there are six types of items so six TypeContainer components will be rendered, then TypeContainer can send it's values up to Outline which can add together those six values for the total price. The total price can be subtracted from the user budget and give the Total Budget Remaining.
+
+- While cleaning up the code I deleted the YardItems component as it was no longer necessary.
 
 ## Outline
 - Ask the User for their budget

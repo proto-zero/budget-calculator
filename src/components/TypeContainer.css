@@ -1,0 +1,10 @@
+.type-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+
+.card-container {
+    display: flex;
+}

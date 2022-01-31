@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import db from './firebase.config';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import Ex from './Ex';
+import TypeContainer from './TypeContainer';
 import './outline.css';
 
 async function getItems(db) {                                   // Access the items in the firebase api
@@ -37,38 +38,40 @@ function Outline(props) {
 
     let typeArray = [];
     itemList.forEach(item => !typeArray.includes(item.type) ? typeArray.push(item.type) : null );
-    console.log(typeArray);
     
     // JSX
     return (
         <div className="outline">
-            <h1 
-            className={budgetColor}>
+            <h1 className={budgetColor}>
                 Total Budget Remaining: {formatter.format(totalBudgetRemaining)}
             </h1>
             <h2>List of Items</h2>
-            <div className="item-container">
+            {/* <div className="item-container">
                 {typeArray.map(typeOfItem => {return (
                 <div>
                     {typeOfItem}
                     <div>
-                    {itemList.map(item => { if (item.type === typeOfItem) {return <div className="item-list">
-                            {/* Pass the item attributes down to Ex component */}
+                    {itemList.map(item => { if (item.type === typeOfItem) {return (
+                        <div className="item-list">
                             <Ex key={item.type} 
                             onGetPrice={getPrice} 
-                            name={item.name} 
+                            name={item.name}
                             lowprice={item.lowPrice} 
                             highprice={item.highPrice} 
                             formatter={formatter} />
-                        </div>}})}
+                        </div>)}})}
                     </div>
-                </div>)})}
-                {/* {itemList.map(item => { if (item.type === "LIGHTING") {return <div>{item.name}</div>}})} */}
-
-                
+                </div>)})}    
+            </div> */}
+            <div className="item-container">
+                <TypeContainer
+                    onGetPrice={getPrice}
+                    typeArray={typeArray}
+                    itemList={itemList} 
+                    formatter={formatter} 
+                />
             </div>
         </div>
-
     );
 }
 
