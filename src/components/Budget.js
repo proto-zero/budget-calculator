@@ -15,7 +15,6 @@ function Budget(props) {
     function budgetHandler(event) {             
         const userBudget = event.target.value;      // Grabs the user input
         setBudget(userBudget);                      // Sets the state with user input
-        // props.onGetBudget(budget);                  // Passes state up to App
     }
 
     // JSX

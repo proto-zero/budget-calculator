@@ -20,3 +20,8 @@ input {
     line-height: 30.4px;
     text-align: center;
 }
+
+input:hover {
+    color: #fff;
+    background: #000;
+}
