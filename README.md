@@ -67,5 +67,5 @@ App, Budget, Outline, TypeContainer, and Ex css files
 - [x] display the remaining balance
 - [x] Change remaining budget colors 
 - [x] Change font to futura
-- [ ] Finalize styling
+- [x] Finalize styling
 - [ ] Rename Ex and Outline
