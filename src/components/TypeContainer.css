@@ -5,6 +5,15 @@
     margin: 15px;
 }
 
+.type-container h3 {
+    font-family: 'Domaine Display';
+    margin: 0;
+    border: 1px solid black;
+    padding: 13px 26px;
+}
+
 .card-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

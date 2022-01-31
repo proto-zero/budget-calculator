@@ -16,7 +16,7 @@ function TypeContainer(props) {
         <div>
             
             <div className="type-container">
-                {props.typeArray}
+                <h3>{props.typeArray}</h3>
                 <div className="card-container">
                     {props.itemList.map(item => {
                         if (item.type === props.typeArray) {
