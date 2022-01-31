@@ -31,27 +31,27 @@ function Outline(props) {
         setItemList(list);
         }, [])
 
-    function getPriceOne(price) {                               // Sets state for each TypeComponent price 
+    function getPriceWater(price) {                               // Sets state for each TypeComponent price 
         setItemOne(price);
     };
 
-    function getPriceTwo(price) {
+    function getPriceStructure(price) {
         setItemTwo(price);
     };
 
-    function getPriceThree(price) {
+    function getPriceLighting(price) {
         setItemThree(price);
     };
 
-    function getPriceFour(price) {
+    function getPriceGround(price) {
         setItemFour(price);
     };
 
-    function getPriceFive(price) {
+    function getPriceDeck(price) {
         setItemFive(price);
     };
 
-    function getPriceSix(price) {
+    function getPriceFence(price) {
         setItemSix(price);
     };
 
@@ -81,37 +81,37 @@ function Outline(props) {
             <h2>List of Items</h2>
             <div className="item-container">
                 <TypeContainer
-                    onGetPrice={getPriceOne}
+                    onGetPrice={getPriceWater}
                     typeArray={typeArray[0]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
-                    onGetPrice={getPriceTwo}
+                    onGetPrice={getPriceStructure}
                     typeArray={typeArray[1]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
-                    onGetPrice={getPriceThree}
+                    onGetPrice={getPriceLighting}
                     typeArray={typeArray[2]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
-                    onGetPrice={getPriceFour}
+                    onGetPrice={getPriceGround}
                     typeArray={typeArray[3]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
-                    onGetPrice={getPriceFive}
+                    onGetPrice={getPriceDeck}
                     typeArray={typeArray[4]}
                     itemList={itemList} 
                     formatter={formatter} 
                 />
                 <TypeContainer
-                    onGetPrice={getPriceSix}
+                    onGetPrice={getPriceFence}
                     typeArray={typeArray[5]}
                     itemList={itemList} 
                     formatter={formatter} 
