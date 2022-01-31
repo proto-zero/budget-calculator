@@ -5,14 +5,14 @@ import './App.css';
 
 function App() {
   // State
-  const [userBudget, setUserBudget] = useState(0);  // State to store the user budget
+  const [userBudget, setUserBudget] = useState(0);    // State to store the user budget
 
   // Functions
-  function getBudget(budgetState) {                 // Function to pull up the user budget from budget component
+  function getBudget(budgetState) {                   // Pulls up the user budget from budget component
     setUserBudget(budgetState);
   }
 
-  var formatter = new Intl.NumberFormat(undefined, {
+  var formatter = new Intl.NumberFormat(undefined, {  // Formats numbers as currency
     style: 'currency',
     currency: 'USD',
   });

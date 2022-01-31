@@ -3,15 +3,19 @@ import ItemCard from "./ItemCard";
 import './TypeContainer.css';
 
 function TypeContainer(props) {
-    const [itemTotal, setItemTotal] = useState(0);
+    // State
+    const [itemPrice, setItemPrice] = useState(0);      // The price of the selected item from ItemCard
 
-    function getPrice(ItemCardState) {
-        setItemTotal(ItemCardState);
-        props.onGetPrice(itemTotal);
+    // Functions
+    function getPrice(ItemCardState) {                   
+        setItemPrice(ItemCardState);                    // Sets itemPrice state
+        props.onGetPrice(itemPrice);                    // Lifts state to Balance
     };
     
-    var formatter = props.formatter;
+    // Variables
+    var formatter = props.formatter;                    // Formats numbers as currency
 
+    // JSX
     return (
         <div>
             

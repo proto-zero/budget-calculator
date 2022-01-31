@@ -14,7 +14,8 @@ async function getItems(db) {                                   // Access the it
 function Outline(props) {
     // State
     const [itemList, setItemList] = useState([]);               // Api items in state
-    const [itemOne, setItemOne] = useState(0);                  // States for individual TypeContainers
+
+    const [itemOne, setItemOne] = useState(0);                  // States for the individual TypeContainers
     const [itemTwo, setItemTwo] = useState(0);
     const [itemThree, setItemThree] = useState(0);
     const [itemFour, setItemFour] = useState(0);
@@ -27,7 +28,7 @@ function Outline(props) {
         setItemList(list);
         }, [])
 
-    function getPriceOne(price) {
+    function getPriceOne(price) {                               // Sets state for each TypeComponent price 
         setItemOne(price);
     };
 
@@ -52,15 +53,19 @@ function Outline(props) {
     };
 
     // Variables
-    let itemTotal = parseInt(itemOne) + parseInt(itemTwo) + parseInt(itemThree) + parseInt(itemFour) + parseInt(itemFive) + parseInt(itemSix);
+        // Total price of each TypeComponent price
+    let totalPrice = parseInt(itemOne) + parseInt(itemTwo) + parseInt(itemThree) + parseInt(itemFour) + parseInt(itemFive) + parseInt(itemSix);
 
-    const totalBudgetRemaining = parseInt(props.userBudgetValue) - parseInt(itemTotal);
+        // Remaining Budget subtracting totalPrice from user budget
+    const totalBudgetRemaining = parseInt(props.userBudgetValue) - parseInt(totalPrice);
 
-    var formatter = props.formatter;                            // Formats numbers as currency
+        // Formats numbers as currency
+    var formatter = props.formatter;                            
 
-    // Adjusts the color of Total Budget Remaining depending on whether it is over or under budget
+        // Adjusts the backgroundcolor of Total Budget Remaining depending on whether it is over or under budget
     const budgetColor = totalBudgetRemaining >= 0 ? 'under total-budget' : 'over total-budget';
 
+        // An array with one of each item type
     let typeArray = [];
     itemList.forEach(item => !typeArray.includes(item.type) ? typeArray.push(item.type) : null );
     
