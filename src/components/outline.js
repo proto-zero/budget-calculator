@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import db from './firebase.config';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import Ex from './Ex';
 import TypeContainer from './TypeContainer';
 import './outline.css';
 
@@ -23,9 +22,10 @@ function Outline(props) {
         setItemList(list);
         }, [])
 
-    function getPrice(exState) {                                // Sets state for the total price of items selected
-        const totalPrice = parseInt(itemTotal) + parseInt(exState);
-        setItemTotal(totalPrice);
+    function getPrice(typeContainerState) {                     // Sets state for the total price of items selected
+        // const totalPrice = parseInt(itemTotal) + parseInt(exState);
+        // setItemTotal(totalPrice);
+        setItemTotal(parseInt(typeContainerState));
     }
 
     // Variables
@@ -46,30 +46,18 @@ function Outline(props) {
                 Total Budget Remaining: {formatter.format(totalBudgetRemaining)}
             </h1>
             <h2>List of Items</h2>
-            {/* <div className="item-container">
-                {typeArray.map(typeOfItem => {return (
-                <div>
-                    {typeOfItem}
-                    <div>
-                    {itemList.map(item => { if (item.type === typeOfItem) {return (
-                        <div className="item-list">
-                            <Ex key={item.type} 
-                            onGetPrice={getPrice} 
-                            name={item.name}
-                            lowprice={item.lowPrice} 
-                            highprice={item.highPrice} 
-                            formatter={formatter} />
-                        </div>)}})}
-                    </div>
-                </div>)})}    
-            </div> */}
             <div className="item-container">
-                <TypeContainer
-                    onGetPrice={getPrice}
-                    typeArray={typeArray}
-                    itemList={itemList} 
-                    formatter={formatter} 
-                />
+                {typeArray.map(typeOfItem => {
+                    return (
+                        <TypeContainer
+                            key={typeOfItem}
+                            onGetPrice={getPrice}
+                            typeArray={typeOfItem}
+                            itemList={itemList} 
+                            formatter={formatter} 
+                        />
+                    )
+                })}
             </div>
         </div>
     );
