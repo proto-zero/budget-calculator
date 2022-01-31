@@ -49,6 +49,10 @@ App, Budget, Balance, TypeContainer, and ItemCard css files
 
 - I was able to organize the items by type when I created an array of just the item types, then iterated over that array in Balance to produce a TypeContainer component full of ItemCard components. This allowed me to lift the state of each individual item's price from ItemCard to TypeContainer to Balance, however by the time it reached Balance I only had one state for six different item types. I resolved to take the more manual approach and create six TypeContainer components, each with a different type, and feed each a function to update a corresponding state. I then totaled those states and subtracted them from the user budget to successfully allow the user to adjust their budget.
 
+- After much research, UseEffect makes more sense and I can use it to lift state immediately when the state of a component updates, thus removing any state lag.
+
+- The ItemCard select options can't communicate with each other and so don't know when one is selected, causing confusion as to what items have been selected of each type. I added an ID to my itemList from the api and passed it down to each iterated ItemCard as the key. I made a new state in TypeContainer for itemID and set it to a number outside of the range of ids created for itemList. I passed up the item id selected from ItemCard to compare with the TypeContainer itemID in order to determine whether a selector option is the currently selected option, closing any other open selectors and making item selection much more clear and ideal.
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
@@ -61,7 +65,7 @@ App, Budget, Balance, TypeContainer, and ItemCard css files
 ## TODO
 - [x] sort the item cards by type
 - [x] Must be able to lower the remaining budget by deselecting items
-- [ ] Fix lag in updating state
+- [x] Fix lag in updating state
 - [x] adjust price from pennies to dollars and decimals. Divide by 100?
 - [x] Create layout for item cards
 - [x] Push state from item cards to Balance
@@ -70,3 +74,4 @@ App, Budget, Balance, TypeContainer, and ItemCard css files
 - [x] Change remaining budget colors 
 - [x] Change font to futura
 - [x] Finalize styling
+- [x] Correct selector on/off

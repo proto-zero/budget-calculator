@@ -33,7 +33,6 @@ function TypeContainer(props) {
                                     key={item.id}
                                     onGetPrice={getPrice}
                                     item={item} 
-                                    
                                     selected={item.id === itemID}
                                     selectedValue={itemPrice}
                                     formatter={formatter} 
