@@ -9,7 +9,7 @@ function Ex(props) {
     function priceHandler(e) {
         const itemPrice = (e.currentTarget.value);  // Grabs the selected price
         setPrice(itemPrice);                        // Sets the state with that price
-        props.onGetPrice(price);                    // Passes state up to outline
+        props.onGetPrice(price);                    // Lifts state to TypeContainer
     };
 
     // JSX
