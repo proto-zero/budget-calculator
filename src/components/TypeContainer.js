@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Ex from "./Ex";
+import ItemCard from "./ItemCard";
 import './TypeContainer.css';
 
 function TypeContainer(props) {
     const [itemTotal, setItemTotal] = useState(0);
 
-    function getPrice(exState) {
-        setItemTotal(exState);
+    function getPrice(ItemCardState) {
+        setItemTotal(ItemCardState);
         props.onGetPrice(itemTotal);
     };
     
@@ -21,7 +21,7 @@ function TypeContainer(props) {
                     {props.itemList.map(item => {
                         if (item.type === props.typeArray) {
                             return (
-                                <Ex 
+                                <ItemCard 
                                     key={Math.random()}
                                     onGetPrice={getPrice} 
                                     name={item.name}

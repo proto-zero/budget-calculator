@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Ex.css'
+import './ItemCard.css'
 
 function Ex(props) {
     // State
@@ -14,7 +14,7 @@ function Ex(props) {
 
     // JSX
     return (
-            <div className="ex">
+            <div className="item-card">
                 {/* <h3>{props.type}</h3> */}
                 <h2>{props.name}</h2>
                 <select onChange={priceHandler}>

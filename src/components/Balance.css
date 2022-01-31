@@ -1,4 +1,4 @@
-.outline {
+.balance {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,7 @@
     padding: 2vw 0;
 }
 
-.outline h1 {
+.balance h1 {
     text-align: center;
     font-family: 'Domaine Display';
 }

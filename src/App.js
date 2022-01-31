@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Budget from './components/Budget';
-import Outline from './components/outline';
+import Balance from './components/Balance';
 import './App.css';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="app">
       <Budget onGetBudget={getBudget} formatter={formatter} />            {/* Grabs the user budget */}
-      <Outline userBudgetValue={userBudget} formatter={formatter} />      {/* Passes the user budget down */}
+      <Balance userBudgetValue={userBudget} formatter={formatter} />      {/* Passes the user budget down */}
     </div>
   );
 }
