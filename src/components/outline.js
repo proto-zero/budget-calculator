@@ -23,9 +23,8 @@ function Outline(props) {
         }, [])
 
     function getPrice(typeContainerState) {                     // Sets state for the total price of items selected
-        // const totalPrice = parseInt(itemTotal) + parseInt(exState);
-        // setItemTotal(totalPrice);
-        setItemTotal(parseInt(typeContainerState));
+        const totalPrice = parseInt(itemTotal) + parseInt(typeContainerState);
+        setItemTotal(totalPrice);
     }
 
     // Variables

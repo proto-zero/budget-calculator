@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from '../yardzenLogo.png';
 import './Budget.css';
 
 function Budget(props) {
@@ -15,6 +16,9 @@ function Budget(props) {
     // JSX
     return (
         <div className="budget">
+            <div className="img-container">
+                <img src={logo} />
+            </div>
             <h3>What is your budget?</h3>
             {/* Input is styled after the email submission on the Yardzen homepage */}
             <input type="number" onChange={budgetHandler} placeholder="Budget" />
