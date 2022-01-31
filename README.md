@@ -45,6 +45,8 @@ App, Budget, Outline, TypeContainer, and Ex css files
 
 - While cleaning up the code I deleted the YardItems component as it was no longer necessary.
 
+- In keeping with the Yardzen homepage similarities I added the Yardzen logo to the top corner
+
 ## Outline
 - Ask the User for their budget
 - Save the budget in the state
