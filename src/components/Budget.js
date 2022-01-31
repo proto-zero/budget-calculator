@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 import logo from '../yardzenLogo.png';
 import './Budget.css';
 
@@ -6,11 +7,15 @@ function Budget(props) {
     // State
     const [budget, setBudget] = useState(0);        // State to store the user budget
 
+    useEffect(() => {
+        props.onGetBudget(budget);
+    }, [budget])
+
     // Functions
     function budgetHandler(event) {             
         const userBudget = event.target.value;      // Grabs the user input
         setBudget(userBudget);                      // Sets the state with user input
-        props.onGetBudget(budget);                  // Passes state up to App
+        // props.onGetBudget(budget);                  // Passes state up to App
     }
 
     // JSX

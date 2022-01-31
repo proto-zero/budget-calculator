@@ -25,6 +25,9 @@ function Outline(props) {
     // Functions
     useEffect(async() => {                                      // Sets state for the itemList
         const list = await getItems(db);
+        for (let i=0; i < list.length; i++) {
+            list[i].id = i 
+        }
         setItemList(list);
         }, [])
 
